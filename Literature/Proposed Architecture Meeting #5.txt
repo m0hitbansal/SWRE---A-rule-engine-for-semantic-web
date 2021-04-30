@@ -1,0 +1,5 @@
+1. Complete the front-end. Make the whole front-end + back-end thing functional
+2. The rules containing AND and ORs, these rule from Left to Right, @JAYANT, edit java/SWRE/ruleChaining/Chaining/createQuery method for the same
+3. OWL ontology comes with in-built properties of object properties, like taught_by has property inverse of teaches, auto-generate all these rules and store them in rules.xml
+4. Implement forward chaining and backward chaining with multiple passes -> complete
+5. UI for Demo and Add Data

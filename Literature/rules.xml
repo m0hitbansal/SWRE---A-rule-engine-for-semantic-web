@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Rules>
+    <Rule><Antecendent><Subject>?Faculty</Subject><Predicate>teaches</Predicate><Object>?Course</Object><Connector>AND</Connector><Subject>?Student</Subject><Predicate>opts</Predicate><Object>?Course</Object></Antecendent><Consequent><Subject>?Student</Subject><Predicate>isStudentOf</Predicate><Object>?Faculty</Object></Consequent></Rule></Rules>

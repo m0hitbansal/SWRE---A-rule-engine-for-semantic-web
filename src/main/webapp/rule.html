@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SWRE</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="js/ruleList.js"></script>
+    <style>
+        .hide{display:none}
+        .rule_part{
+            padding-top:150px;
+        }
+    </style>
+
+</head>
+
+<body>
+<!--::header part start::-->
+<div class="loader"></div>
+<header class="main_menu home_menu">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"> <img src="img/logo.jpeg" alt="logo"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                         id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="upload.html">New Ontology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="query.html">Query</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rule.html">Create Rule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="d-none d-lg-block">
+                                <a class="btn_1" href="workon.html">Home</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header part end-->
+
+<!-- banner part start-->
+<section class="rule_part">
+    <div class="container" style= "margin-bottom: 20px">
+        <div class="row align-items-center">
+
+            <div class="col-lg-12 col-sm-12 border p-3" id="existSection">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <h3>Rule Engine</h3>
+                </div>
+                <div class="col-lg-12 col-sm-12">
+                    <p>The rule engine creates custom rules which are to be executed using one of the chaining paradigms and update the knowledge base. By default, the system operates on forward chaining.
+                    </p>
+                </div>
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <h4>Operating the Rule Engine</h4>
+                </div>
+                <div class="col-lg-12 col-sm-12">
+                    <p>Select the existing rules you want to execute on the selected ontology by clicking on the check box against that rule and hit Submit. Submitting will trigger the
+                        <br><b>Forward Chaining</b> operating on default. If this is the first time you are operating on a fresh ontology, the forward chaining shall take a little more time than usual to update the knowledge base as per the implicit rules specified by the onotology i.e.
+                        updating the knowledge base on the basis of the constraints provided implicitely by the ontology.<br>
+                        <b>Note:</b>  Forward chaining in a computationally expensive. It runs same rule in multiple passes until no new fact is added to the knowledge base. For simple boolean single level queries, try backward chaining instead of foward chaining to obtain quicker results.
+
+                        <br><b>Backward Chaining</b> The backward chaining paradigm can be located on the <a href="query.html"><b>Query</b> </a> tab. For quick results on the literal based queries, prefer backward chaining.<br>
+                        Please head to the <a href="about.html"><b>tutorial</b> </a> section for more details on SWRE<br><br>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 text-center">
+                        <h3>Existing Rules</h3>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 pl-5 pr-5">
+                        <div id="existingrules">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-2"></div>
+                    <div class="col-lg-3 col-sm-5">
+                        <button class="btn_1 btn-info w-100" style="box-sizing: revert" onclick="createRule()">Create New Rule</button>
+                    </div>
+                    <div class="col-lg-3 col-sm-3" >
+                        <button class="btn_2 btn-primary w-100" onclick="submitE()">Submit</button>
+                    </div>
+                    <div class="col-lg-3 col-sm-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mt-2 hide" id="ifSection">
+            <div class="col-lg-12 col-sm-12 text-center">
+                <h3>Create A New Rule</h3>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+                <p>Each rule in the rule engine comprises two separate parts i.e. the antecedent and the consequent.
+                    <br> <b>Antecedent</b>: An antecedent rule can be a combination of several triples connected by an AND/OR connector.
+                    <br><b>Literals</b> can also be inserted in the subject and object part of the triple which forms the building block of the antecedent. For adding a literal, select the "Other" field in the subject/object, a text box shall appear, fill in the required literal value.
+                    <br><b>Predicate</b> section of the antecedent consists all the object properties, data properties and sub-properties that exist in the current ontology
+                    The current subjects and objects selected in the antecedent part are the only ones which could form the subjects and objects in the
+                    <b>consequent</b> Press the <b>Done</b> button to freeze the composite antecedent rule.
+                    <br><b>Consequent</b>: A consequent rule is a triple. The objects/subjects selected in the antecedent are the only objects/subjects available in the consequent part. The predicate is a text field. The predicate will take existing object properties,
+                    data properties and sub-properties as an input. Please keep a check on the case-sensitivity. New predicates can also be added in this section which will update the knowledge base. <br><br>
+                    <b>Note:</b>  The literals added to the antecedent part shall also appear in the consequent. Please refrain yourself to use a literal which is not present in the ontology i.e. do not add a literal
+                    using the rule engine as it would not contain the data properties used to define as in the ontology. We would advice you to update the ontology if you want to add new literals and work on them <br>
+                    <b>Key Note:</b> If two different versions of the same class are to be used, example ?Student isBatchmateOf ?Student, select the "Other" option from the drop down menu and input <i>?Student1</i> to generate the desired results.<br>
+                    Please head to the <a href="about.html"><b>tutorial</b> </a> section for more details on SWRE<br><br>
+                </p>
+
+            </div>
+            <div class="col-lg-12 col-sm-12 border p-3">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 text-center">
+                        <h3>If Rules</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3">
+                        <h5>Subject</h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <h5>Predicate</h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <h5>Object</h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-3">
+                        <h5>AND/OR</h5>
+                    </div>
+                </div>
+                <div id="ifrules" class="mb-2">
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-3"></div>
+                    <div class="col-lg-2 col-sm-3">
+                        <button class="btn_1 btn-info w-100" onclick="addRule()">Add</button>
+                    </div>
+                    <div class="col-lg-2 col-sm-3">
+                        <button class="btn_2 btn-primary w-100" href="#thenrules" onclick="done()">Done</button>
+                    </div>
+                    <div class="col-lg-4 col-sm-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mt-2 hide" id="thenSection">
+            <div class="col-lg-12 border p-3">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 text-center">
+                        <h3>Then Rules</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <h5>Subject</h5>
+                    </div>
+                    <div class="col-lg-4 col-sm-4">
+                        <h5>Predicate</h5>
+                    </div>
+                    <div class="col-lg-4 col-sm-4">
+                        <h5>Object</h5>
+                    </div>
+                </div>
+                <div id="thenrules" class="mb-2">
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-5"></div>
+                    <div class="col-lg-2">
+                        <button class="btn_2 btn-success w-100" onclick="submit()">Submit</button>
+                    </div>
+                    <div class="col-lg-5"></div>
+                </div>
+            </div>
+        </div>
+        <div ></div>
+    </div>
+</section>
+
+
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

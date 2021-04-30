@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SWRE</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="js/query.js"></script>
+
+    <style>
+        .hide{display:none}
+        .query_part{
+            padding-top:150px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse; padding: 2px 3px; text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="loader"></div>
+<!--::header part start::-->
+<header class="main_menu home_menu">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"> <img src="img/logo.jpeg" alt="logo"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                         id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="upload.html">New Ontology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="query.html">Query</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rule.html">Create Rule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="d-none d-lg-block">
+                                <a class="btn_1" href="workon.html">Home</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header part end-->
+
+<!-- banner part start-->
+<section class="query_part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <button class="btn_1 btn-info w-100" onclick="togle()">Backward Chaning</button>
+            </div>
+            <div class ="col-lg-9"></div>
+        </div>
+        <div class="row align-items-center"  id="plainquery">
+            <div class="col-lg-12 text-center">
+                <h3>Query</h3>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+                <p>Query page takes enables different queries to be run on the knowledge base. The input query can also contain literal in the subject/object. For adding a literal in the query,
+                    select the <b>Option</b> in the drop down menu and try the required literal in the text box under single quotes, example, 'MT2019001'. Object properties, data properties and
+                    sub-properties can also be queried in order to achieve the results. Complexities in the queries can be added by combining multiple triples and connecting them using AND/OR connector.
+                    <br> The above query gives all the student who have opted for the subjects being taught by the respect faculty who teaches the course <br>
+                    <b>Key Note:</b> If two different versions of the same class are to be used, example ?Student isBatchmateOf ?Student, select the "Other" option from the drop down menu and input <i>?Student1</i> to generate the desired results.<br>
+                    Please head to the <a href="about.html"><b>tutorial</b> </a> section for more details on SWRE<br><br>
+                </p>
+            </div>
+            <div class="col-lg-12 border p-3" style="border-radius: 50px;">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h5>Subject</h5>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5>Predicate</h5>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5>Object</h5>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5>AND/OR</h5>
+                    </div>
+                </div>
+                <div id="node" class="mb-2">
+
+                </div>
+            </div>
+            <div class="col-lg-12 align-items-center">
+                <div class="row" style="padding-top:15px ">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-2">
+                        <button class="btn_1 btn-info w-100" onclick="newNode()">Add</button>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn_2 btn-primary w-100" onclick="go()">Go</button>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center hide"  id="backward">
+            <div class="col-lg-12 col-sm-12 text-center">
+                <h3> Backward chaining Query</h3>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+                <p>Backward chaining recursively searches for the result for the current single level query. Backward chaining works only on the literals i.e. only literals should be provided in the subject/object part.
+                    <br>Use the drop down menu to toggle <b>Other</b> value and insert the literals in a single quote. Backward chaining gives a boolean alert based solution to the query.<br>
+                    Please head to the <a href="about.html"><b>tutorial</b> </a> section for more details on SWRE<br><br>
+                </p>
+            </div>
+            <div class="col-lg-12 border p-3" style="border-radius: 50px;">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h5>Subject</h5>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5>Predicate</h5>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5>Object</h5>
+                    </div>
+                </div>
+                <div id="backwordnode" class="mb-2">
+
+                </div>
+            </div>
+            <div class="col-lg-12 align-items-center">
+                <div class="row" style="padding-top:15px ">
+                    <div class="col-lg-5"></div>
+
+                    <div class="col-lg-2">
+                        <button class="btn_2 btn-primary w-100" onclick="backwardgo()">Go</button>
+                    </div>
+                    <div class="col-lg-5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mt-3 hide" id="result">
+            <div class="col-lg-12 text-center">
+                <h3>Result</h3>
+            </div>
+            <div class="col-lg-12  result">
+                <div id="showResult">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

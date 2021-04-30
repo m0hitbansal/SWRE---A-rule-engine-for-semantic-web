@@ -1,0 +1,130 @@
+<name = "rules" minOccurs = 1 maxOccurs = 99999>
+
+	<complexElement>
+		<rule>
+			<s>
+			<p>
+			<o>
+		</rule>
+		<connector> Last/AND/OR</connector>
+		<rule>
+			.
+			.
+			.
+			.
+		<
+</>
+
+<then>
+	<rule>
+		<s>
+		<p>
+		<o>
+	</rule>
+</then>
+
+if							Consequent
+ID = 1	?teacher teaches ?course 
+	AND                                              ID = 44
+ID = 2	?student enrolledIn ?course
+
+then
+ID = 3 dd(?student)   Tb[isStudentOf]  dd(?teacher)
+
+
+RULE {if 1 and 2, then 3}
+
+
+
+RULE UI
+
+
+	Existing Rules
+[0] 
+[] 
+[0] 
+[0] 
+[]
+
++
+IF
+dd()	dd()	dd()    AND/OR
+dd()	dd()	dd()	AND/OR
+dd()	dd()	dd()	AND/OR
+dd()	dd()	dd()	AND/OR
+dd()	dd()	dd()	AND/OR
+dd()	dd()	dd()
+
+Then
+dd()	tb[]	dd()
+
+
+[    Forward     ] [   Backward    ]
+
+
+
+
+JAYANT
+
+If arraylist ==> 4n-1 length
+then arraylist ==> 3 length 
+
+package RuleStore
+Class SWRERules
+
+void updateXML(if, then); -> Create an XML File-> if and then rules store ho jaye.
+
+4 methods
+1. Store IFs separately, THENs separately, connect them with keys
+2. Store triples separately, store hashed rules separately, connect them with keys (best method)
+3. Generate SPARQL query, save the query and parse and generate rules at runtime
+	ID = SELECT ?student,?teacher FROM { ?teacher foo:teaches foo:?course . ?student foo:enrolledin ?course}       newPredicateName = isStudentOf
+4. Store RULES AS A WHOLE (not good)
+
+ArrayList <String> getRules() -> From the XML you created, suppose for now, user has created 8 new rules. Your function needs to output all the 8 rules in 8X(4n+2) array of rules.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+Important Text
+
+
+
+The viewpoint of the CTO of a company that extensively uses RDF Triplestores commercially:
+
+Schema flexibility - it's possible to do the equivalent of a schema change to an RDF store live, and without any downtime, or redesign - it's not a free lunch, you need to be careful with how your software works, but it's a pretty easy thing to do.
+
+More modern - RDF stores are typically queried over HTTP it's very easy to fit them into Service Architectures without hacky bridging solutions, or performance penalties. Also they handle internationalised content better than typical SQL databases - e.g. you can have multiple values in different languages.
+
+Standardisation - the level of standardisation of implementations using RDF and SPARQL is much higher than SQL. It's possible to swap out one triplestore for another, though you have to be careful you're not stepping outside the standards. Moving data between stores is easy, as they all speak the same language.
+
+Expressivity - it's much easier to model complex data in RDF than in SQL, and the query language makes it easier to do things like LEFT JOINs (called OPTIONAL in SPARQL). Conversely though, if you data is very tabular, then SQL is much easier.
+
+Provenance - SPARQL lets you track where each piece of information came from, and you can store metadata about it, letting you easily do sophisticated queries, only taking into account data from certain sources, or with a certain trust level, on from some date range etc.
+
+There are downsides though. SQL databases are generally much more mature, and have more features than typical RDF databases. Things like transactions are often much more crude, or non existent. Also, the cost per unit information stored in RDF v's SQL is noticeably higher. It's hard to generalise, but it can be significant if you have a lot of data - though at least in our case it's an overall benefit financially given the flexibility and power.
+

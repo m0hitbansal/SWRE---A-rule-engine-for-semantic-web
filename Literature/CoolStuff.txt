@@ -1,0 +1,35 @@
+1. Download Jena from http://apachemirror.wuchna.com/jena/binaries/apache-jena-3.14.0.tar.gz and extract somewhere in the eclipse project
+2. Open eclipse, make a maven project from scratch and update POM.XML as 
+	<dependency>
+     <groupId>org.apache.jena</groupId>
+     <artifactId>jena-sdb</artifactId>
+     <version>3.14.0</version>
+    </dependency>
+  	<dependency>
+   		<groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.18</version>
+     </dependency>
+     <dependency>
+        <groupId>org.apache.jena</groupId>
+        <artifactId>apache-jena-libs</artifactId>
+        <version>3.14.0</version>
+        <type>pom</type>
+     </dependency>
+     
+     <dependency>
+     	<groupId>org.apache.jena</groupId>
+    	<artifactId>jena-arq</artifactId>
+    	<version>3.14.0</version>
+	</dependency>
+
+	Update maven
+
+  Also, select your project in the package explorer and in "Build Path", toggle to a "User Library" and in the new library, navigate to the folder you have extracted Jena and in the "/lib", select all the Jar files. All the Jena dependencies have now been installed.
+
+3. Install MySql, confirm your version at "https://jena.apache.org/documentation/sdb/databases_supported.html"
+
+Create a user and a password. 
+Create a database, here, we have created SWRE
+
+

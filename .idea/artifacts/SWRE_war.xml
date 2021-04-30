@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SWRE:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SWRE</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SWRE.war">
+      <element id="artifact" artifact-name="SWRE:war exploded" />
+    </root>
+  </artifact>
+</component>

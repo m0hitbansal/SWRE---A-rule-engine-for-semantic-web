@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SWRE</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="js/jquery-1.12.1.min.js"></script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img src="img/logo.jpeg" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                             id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="upload.html">New Ontology</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="query.html">Query</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="rule.html">Create Rule</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_1" href="workon.html">Home</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- banner part start-->
+    <section class="banner_part1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-6">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+
+                            <h3 id="nameontology">University Ontology</h3>
+                            <h1>A sample ontology built on IIIT-B data</h1>
+                            <p>University Ontology tries to capture a basic structure of information about a university.There are 8 classes ,12 object properties and individuals (instances of class).Some of the object properties incorporates characteristics such as Reflexive,Symmetric,Transitive and inverseOf. In addition to this, there are also Data Properties pertaining to each individual that stores more information about that individual. </p>
+                                <a href="query.html" class="btn_1">Query</a>
+                            <a href="rule.html" class="btn_2">Rule</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+<script>
+    var val=sessionStorage.getItem("content");
+    if(val==="university"){
+        $('#nameontology').html( "Default "+val+" ontology");
+    }
+    else
+        $('#nameontology').html( "Current Ontology prefix :"+val);
+</script>
+</body>
+
+</html>

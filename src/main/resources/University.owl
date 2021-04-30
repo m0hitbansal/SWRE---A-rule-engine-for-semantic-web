@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.iiitb.org/university#"
+     xml:base="http://www.iiitb.org/university"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:university="http://www.iiitb.org/university#">
+    <owl:Ontology rdf:about="http://www.iiitb.org/university"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitb.org/university#studies -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitb.org/university#studies">
+        <rdfs:domain rdf:resource="http://www.iiitb.org/university#Student"/>
+        <rdfs:range rdf:resource="http://www.iiitb.org/university#Modules"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitb.org/university#taught_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitb.org/university#taught_by">
+        <owl:inverseOf rdf:resource="http://www.iiitb.org/university#teaches"/>
+        <rdfs:domain rdf:resource="http://www.iiitb.org/university#Modules"/>
+        <rdfs:range rdf:resource="http://www.iiitb.org/university#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitb.org/university#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitb.org/university#teaches">
+        <rdfs:domain rdf:resource="http://www.iiitb.org/university#Faculty"/>
+        <rdfs:range rdf:resource="http://www.iiitb.org/university#Modules"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitb.org/university#CS -->
+
+    <owl:Class rdf:about="http://www.iiitb.org/university#CS">
+        <rdfs:subClassOf rdf:resource="http://www.iiitb.org/university#Modules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitb.org/university#Electronics -->
+
+    <owl:Class rdf:about="http://www.iiitb.org/university#Electronics">
+        <rdfs:subClassOf rdf:resource="http://www.iiitb.org/university#Modules"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitb.org/university#Faculty -->
+
+    <owl:Class rdf:about="http://www.iiitb.org/university#Faculty">
+        <rdfs:subClassOf rdf:resource="http://www.iiitb.org/university#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitb.org/university#Modules -->
+
+    <owl:Class rdf:about="http://www.iiitb.org/university#Modules"/>
+    
+
+
+    <!-- http://www.iiitb.org/university#Person -->
+
+    <owl:Class rdf:about="http://www.iiitb.org/university#Person"/>
+    
+
+
+    <!-- http://www.iiitb.org/university#Student -->
+
+    <owl:Class rdf:about="http://www.iiitb.org/university#Student">
+        <rdfs:subClassOf rdf:resource="http://www.iiitb.org/university#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitb.org/university#Ankita -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Ankita">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS603"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#Archit -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Archit">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS817"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#CS816 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#CS816">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#CS"/>
+        <taught_by rdf:resource="http://www.iiitb.org/university#ProfB.Thangaraju"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#DS603 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#DS603">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#CS"/>
+        <taught_by rdf:resource="http://www.iiitb.org/university#ProfChandrashekarRamanathan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#DS817 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#DS817">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#CS"/>
+        <taught_by rdf:resource="http://www.iiitb.org/university#ProfSrinivasa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#EC201 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#EC201">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Electronics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#EC202 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#EC202">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Electronics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#Jayant -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Jayant">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#CS816"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS603"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS817"/>
+        <studies rdf:resource="http://www.iiitb.org/university#SP823"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#Mohit -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Mohit">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#CS816"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS603"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS817"/>
+        <studies rdf:resource="http://www.iiitb.org/university#SP823"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#Parth -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Parth">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#CS816"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS603"/>
+        <studies rdf:resource="http://www.iiitb.org/university#SP823"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#ProfB.Thangaraju -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#ProfB.Thangaraju">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Faculty"/>
+        <teaches rdf:resource="http://www.iiitb.org/university#CS816"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#ProfChandrashekarRamanathan -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#ProfChandrashekarRamanathan">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Faculty"/>
+        <teaches rdf:resource="http://www.iiitb.org/university#DS603"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#ProfSrinivasa -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#ProfSrinivasa">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Faculty"/>
+        <teaches rdf:resource="http://www.iiitb.org/university#DS817"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#ProfV.Ramasubramanian -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#ProfV.Ramasubramanian">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Faculty"/>
+        <teaches rdf:resource="http://www.iiitb.org/university#SP823"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#SP823 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#SP823">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#CS"/>
+        <taught_by rdf:resource="http://www.iiitb.org/university#ProfV.Ramasubramanian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#Shankei -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Shankei">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS603"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitb.org/university#Shubham -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitb.org/university#Shubham">
+        <rdf:type rdf:resource="http://www.iiitb.org/university#Student"/>
+        <studies rdf:resource="http://www.iiitb.org/university#DS603"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

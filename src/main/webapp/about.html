@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SWRE</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+        .chain{
+            list-style: circle;font-family: Roboto, sans-serif;line-height: 1.929;font-size: 14px;margin-bottom: 0px;color: #888888;
+        }
+    </style>
+</head>
+
+
+<body>
+<!--::header part start::-->
+<header class="main_menu single_page_menu">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"> <img src="img/logo1.png" alt="logo"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                         id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-center">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="upload.html">New Ontology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="query.html">Query</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rule.html">Create Rule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="d-none d-lg-block">
+                                <a class="btn_1" href="workon.html">Home</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header part end-->
+
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>About Us</h2>
+                        <p>Home<span>/</span>About Us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+<!-- feature_part start-->
+<section class="feature_part single_feature_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                <h3>Tutorial</h3>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 border p-3">
+                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                    <h4>This section deals in getting a new user started with the rule engine.</h4><p> Please follow the compact jobs below to achieve some meaningful results using the rule engine.</p>
+
+                    <details ontoggle>
+                        <summary><b>Job: Forward Chaining</b></summary>
+                        <p> This section deals in implementing forward chaining. Follow the steps below to attain the required results:
+                            In the default university ontology provided, if a ?Student opts for a ?Course and a ?Faculty teaches a ?Course,
+                            we could add a consequent that the ?Student is a student of ?Faculty.<br><b>Steps: </b><br>
+                        </p>
+                        <ul class="chain">
+                            <li>
+                                Toggle to <a href="rule.html"><b>Create Rule</b></a> and press the button "Create New Rule"
+                            </li>
+                            <li> Add the antecedent part</li>
+                            <li>?Student opts ?Course AND ?Faculty teaches ?Course</li>
+                            <li>Add the consequent part </li>
+                            <li>?Student isStudentOf ?Faculty</li>
+                            <li>Click on "Done"</li>
+                            <li>Select the newly created rule and hit sumbit, you should see the loading screen. (If this is the first run for the ontology, it might take some time)</li>
+                            <li> Head to the <a href="query.html"><b>Query</b></a> tab and toggle for the query</li>
+                            <li> ?Student isStudentOf ?Faculty</li>
+                            <li>You should see the tabulated result below</li>
+                        </ul>
+                    </details>
+
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                    <details ontoggle>
+                        <summary><b>Job: Backward Chaining</b></summary>
+                        <p> This sections deals with the implementation shown by the backward chaining.
+                            Please complete the steps in the above section before heading below.<br><b>Steps: </b><br>
+                        </p>
+                        <ul class="chain">
+                            <li>
+                                Toggle to <a href="rule.html"><b>Create Rule</b></a> and press the button "Create New Rule"
+                            </li>
+                            <li> Add the antecedent part</li>
+                            <li>?Student isStudentOf ?Faculty</li>
+                            <li>Add the consequent part </li>
+                            <li>?Faculty isTeacherOf ?Student</li>
+                            <li>Click on "Done"</li>
+                            <li> Head to the <a href="query.html"><b>Query</b></a> tab and hit backward chaining button</li>
+                            <li>In the "Subject", select "Other" and input 'ProfChandrashekarRamanathan' (Without quotes)</li>
+                            <li> In the "Predicate", browse from the list "isFacultyOf" and select it</li>
+                            <li>In the "Object", select "Other" and input 'MT2019074' (Without quotes)</li>
+                            <li>Hit "Go" and  Wait for the result via alert</li>
+                        </ul>
+                        <p>Note: Backward chaining also processes a query but the time taken is less than processing the forward chaining.</p>
+
+                    </details>
+                </div>
+                <br> <br>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="single_feature_text text-center">
+                    <h2>Project Guide</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6"></div>
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
+
+                <div class="image-box">
+                    <figure class="image"><img src="img/prof.png" alt="">
+
+                    </figure>
+                </div>
+                <div class="caption-box text-center" >
+                    <h2 class="name">Prof Chandrashekar Ramanathan </h2>
+
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6"></div>
+            <div class="col-lg-12">
+                <div class="single_feature_text text-center">
+                    <h2>Team</h2>
+                </div>
+            </div>
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="img/parth.png" alt="">
+                            <div class="social-links">
+                                <ul>
+                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                </ul>
+
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="caption-box text-center">
+                        <h2 class="name">Parth Trehan</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="img/mohit.png" alt="">
+                            <div class="social-links">
+                                <ul>
+                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                </ul>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="caption-box text-center">
+                        <h4 class="name">Mohit Bansal </h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-block col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="img/jayant.jpeg" alt="">
+                            <div class="social-links">
+                                <ul>
+                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                </ul>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="caption-box text-center" >
+                        <h4 class="name">Jayant Tiwari </h4>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- upcoming_event part start-->
+
+
+
+
+
+
+</body>
+
+</html>
